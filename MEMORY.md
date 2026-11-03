@@ -15,3 +15,9 @@
 - No se incluye botón de descarga de CV ni WhatsApp por decisión de diseño de Felipe; el contenido se contrasta directamente en la web.
 - Accesos a LinkedIn y GitHub presentes en Navbar, About y Footer con seguridad (`rel="noopener noreferrer"`).
 - Arquitectura limpia y modular en `src/components/`, auditada bajo estándares WCAG AA, `ponytail` y `anti-ui-slop`.
+
+## Despliegue en Producción (En Vivo)
+- **URL Pública:** https://portafolio-freelance-theta.vercel.app/
+- **Plataforma:** Vercel (CI/CD conectado a `elSanku/portafolio-freelance.git`).
+- **Secretos:** `RESEND_API_KEY` configurada en el panel de Vercel.
+- **Backend:** Serverless Function `/api/contact` despachando a `thexsankux007@gmail.com`.

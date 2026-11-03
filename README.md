@@ -110,12 +110,14 @@ miSitio/
 
 ## 🌐 Despliegue en Producción (Vercel)
 
-El proyecto está diseñado para desplegarse con **cero configuración** en Vercel:
-1. Conecta el repositorio de GitHub en [vercel.com](https://vercel.com).
-2. En la sección **Environment Variables**, añade:
-   - **Nombre:** `RESEND_API_KEY`
-   - **Valor:** Tu API Key de Resend.
-3. Despliega con un clic. Vercel aprovisionará el frontend y la función serverless `/api/contact` con HTTPS automático.
+El sitio se encuentra desplegado y en vivo en:  
+👉 **[https://portafolio-freelance-theta.vercel.app/](https://portafolio-freelance-theta.vercel.app/)**
+
+### Configuración de CI/CD:
+1. Conectado al repositorio de GitHub `elSanku/portafolio-freelance`.
+2. Variable de entorno configurada en Vercel:
+   - `RESEND_API_KEY`: API Key para el despacho de correos en la Serverless Function `/api/contact`.
+3. Cada `git push` a la rama `main` dispara un despliegue automático con HTTPS y CDN global.
 
 ---
 
