@@ -1,8 +1,9 @@
 import React from 'react';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Mail } from 'lucide-react';
+import { LinkedinIcon, GithubIcon } from './SocialIcons';
 
-//INI SPEC-001 - 05
-// Componente Footer con créditos profesionales y navegación de retorno
+//INI SPEC-003 - 05
+// Footer actualizado con enlaces sociales y créditos de ingeniería
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
@@ -16,28 +17,57 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           <div>
             <p className="text-white font-bold text-base tracking-tight">
-              Felipe Bustamante <span className="text-amber-400 font-medium text-xs ml-1 uppercase">Freelancer</span>
+              Felipe Bustamante <span className="text-amber-400 font-medium text-xs ml-1 uppercase">.NET &bull; AI Engineer</span>
             </p>
             <p className="text-xs text-stone-400 mt-1">
-              Desarrollo de software y diseño web enfocado en la calidad y resultados.
+              Desarrollo de arquitecturas backend robustas, sistemas transaccionales y flujos con IA.
             </p>
           </div>
 
-          <div className="flex items-center gap-6">
-            <p className="text-xs text-stone-400">
-              &copy; {currentYear} Todos los derechos reservados.
-            </p>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://linkedin.com/in/felipe-bustamante-alcavil"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+              aria-label="Perfil de LinkedIn de Felipe Bustamante"
+            >
+              <LinkedinIcon className="w-4 h-4" />
+            </a>
+
+            <a
+              href="https://github.com/elSanku"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+              aria-label="Perfil de GitHub de Felipe Bustamante"
+            >
+              <GithubIcon className="w-4 h-4" />
+            </a>
+
+            <a
+              href="mailto:thexsankux007@gmail.com"
+              className="p-2.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400"
+              aria-label="Enviar correo electrónico a Felipe Bustamante"
+            >
+              <Mail className="w-4 h-4" />
+            </a>
+
             <button
               onClick={scrollToTop}
-              className="p-2.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 cursor-pointer"
+              className="p-2.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 cursor-pointer ml-2"
               aria-label="Volver al inicio"
             >
               <ArrowUp className="w-4 h-4" />
             </button>
           </div>
         </div>
+
+        <div className="mt-8 pt-8 border-t border-stone-800/60 text-center sm:text-left text-xs text-stone-500">
+          <p>&copy; {currentYear} Felipe Bustamante Alcavil. Todos los derechos reservados.</p>
+        </div>
       </div>
     </footer>
   );
 };
-//FIN SPEC-001 - 05
+//FIN SPEC-003 - 05
