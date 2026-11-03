@@ -6,11 +6,12 @@ node_modules/
 # Testing & Coverage
 coverage/
 
-# Production Build
+# Production Build & Cache
 dist/
 build/
 out/
 .next/
+*.tsbuildinfo
 
 # Environment Variables & Secrets (CRITICAL)
 .env

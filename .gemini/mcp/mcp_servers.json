@@ -9,6 +9,14 @@
       "command": "npx",
       "args": ["-y", "@context7/mcp@latest"],
       "description": "Herramienta MCP local para consulta de documentación técnica oficial y actualizada (React 19, Tailwind CSS, Zod, Resend)."
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      },
+      "description": "Servidor MCP oficial de GitHub para interactuar con repositorios, issues, PRs y commits."
     }
   }
 }
