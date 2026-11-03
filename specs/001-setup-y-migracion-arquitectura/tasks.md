@@ -7,5 +7,5 @@
 - [x] **T-001.5:** Crear componente `Services` con cards de servicios, íconos y checkmarks de valor.
 - [x] **T-001.6:** Crear componente `ContactForm` maquetado con inputs accesibles, íconos y estados visuales.
 - [x] **T-001.7:** Crear componente `Footer` con derechos de autor y botón para subir al inicio.
-- [ ] **T-001.8:** Verificar compilación y diseño responsive.
-- [ ] **T-001.9:** Generar informe técnico de entrega en `docs/reports/` (`.md` y `.html`) y actualizar `MEMORY.md`.
+- [x] **T-001.8:** Verificar compilación y diseño responsive con Reviewer QA (Lighthouse 95/100 A11y, 100/100 Best Practices).
+- [x] **T-001.9:** Generar informe técnico de entrega en `docs/reports/` (`.md` y `.html`) y actualizar `MEMORY.md`.

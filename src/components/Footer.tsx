@@ -18,13 +18,13 @@ export const Footer: React.FC = () => {
             <p className="text-white font-bold text-base tracking-tight">
               Felipe Bustamante <span className="text-amber-400 font-medium text-xs ml-1 uppercase">Freelancer</span>
             </p>
-            <p className="text-xs text-stone-500 mt-1">
+            <p className="text-xs text-stone-400 mt-1">
               Desarrollo de software y diseño web enfocado en la calidad y resultados.
             </p>
           </div>
 
           <div className="flex items-center gap-6">
-            <p className="text-xs text-stone-500">
+            <p className="text-xs text-stone-400">
               &copy; {currentYear} Todos los derechos reservados.
             </p>
             <button

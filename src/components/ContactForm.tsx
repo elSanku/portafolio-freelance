@@ -25,7 +25,7 @@ export const ContactForm: React.FC = () => {
     <section id="contacto" className="py-24 bg-stone-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-xl mx-auto mb-14">
-          <h2 className="text-xs uppercase font-bold tracking-widest text-amber-600 mb-2">Contacto Directo</h2>
+          <h2 className="text-xs uppercase font-bold tracking-widest text-amber-700 mb-2">Contacto Directo</h2>
           <p className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
             ¿Tienes un proyecto en mente?
           </p>
@@ -50,6 +50,7 @@ export const ContactForm: React.FC = () => {
                     type="text"
                     id="nombre"
                     name="nombre"
+                    autoComplete="name"
                     required
                     value={formData.nombre}
                     onChange={handleChange}
@@ -72,6 +73,7 @@ export const ContactForm: React.FC = () => {
                     type="tel"
                     id="telefono"
                     name="telefono"
+                    autoComplete="tel"
                     value={formData.telefono}
                     onChange={handleChange}
                     placeholder="+56 9 1234 5678"
@@ -94,6 +96,7 @@ export const ContactForm: React.FC = () => {
                   type="email"
                   id="email"
                   name="email"
+                  autoComplete="email"
                   required
                   value={formData.email}
                   onChange={handleChange}

@@ -2,25 +2,18 @@
 
 ## Estado Actual
 - **Fecha:** 2026-11-03
-- **Fase:** Definición de Arquitectura, MCPs y Guardrails de Calidad.
-- **Spec Activa:** `001-setup-y-migracion-arquitectura` (Lista para inicio de implementación).
-- **Control de Versiones:** Repositorio en GitHub `elSanku/portafolio-freelance.git` vinculado al usuario personal `Felipe Bustamante` (`thexsankux007@gmail.com`).
+- **Fase:** Cierre de SPEC-001 (Aprobada por QA). Lista para iniciar SPEC-002.
+- **Spec Completada:** `001-setup-y-migracion-arquitectura` (Reporte técnico generado en `docs/reports/`).
+- **Control de Versiones:** Git local con autor `Felipe Bustamante` (`thexsankux007@gmail.com`).
 
-## MCPs Establecidos para el Proyecto
-1. **`chrome-devtools` (MCP Nativo):**
-   - **Propósito:** Pruebas visuales en vivo, auditoría de accesibilidad (a11y), responsive design (mobile/tablet/desktop), verificación de formularios y captura de snapshots.
-2. **`context7` (MCP Nativo):**
-   - **Propósito:** Consulta de documentación oficial y actualizada de librerías modernas (Tailwind CSS, React 19, Zod, Resend).
-
-## Guardrails de Calidad y Diseño Instalados
-- **`ponytail` oficial (Dietrich Gebert):**
-  - Módulos: `ponytail`, `ponytail-review`, `ponytail-audit`, `ponytail-debt`, `ponytail-gain` y regla en `.agents/rules/ponytail.md`.
-  - Propósito: Forzar código conciso ("20 líneas en vez de 100"), sin sobreingeniería ni dependencias redundantes.
-- **`anti-ui-slop`:**
-  - Propósito: Erradicar estética genérica de IA (gradientes púrpura cliché, cards genéricas) y aplicar diseño profesional con identidad, tipografía y balance visual auténtico.
-
-## Limpieza Completa
-- Se eliminaron el 100% de las referencias del proyecto anterior (`valkiria`, `odindte`, `softland`, `.NET 10`). Todo el framework SDD, agentes y skills quedaron adaptados exclusivamente al portafolio web de Felipe Bustamante.
+## Logros de la SPEC-001
+- Se migró la aplicación a **React 19 + TypeScript 5.7 + Vite 6 + Tailwind CSS v4**.
+- Componentes modulares listos en `src/components/` (`Navbar`, `Hero`, `Services`, `ContactForm`, `Footer`).
+- Auditoría QA con **Reviewer Subagent** completada con **Lighthouse 95/100 en Accesibilidad** y **100/100 en Best Practices**.
+- Guardrails `ponytail` (código conciso, cero bloat) y `anti-ui-slop` (diseño con propósito y contraste WCAG AA) aplicados.
 
 ## Próximo Paso
-- Iniciar `T-001.1`: Inicialización del proyecto React + TypeScript + Tailwind CSS bajo la arquitectura SDD limpia.
+- Diseñar e implementar **SPEC-002: Backend y Servicio de Correo**:
+  - Esquema Zod para validación estricta de formulario (cliente y servidor).
+  - Servicio de despacho de correo con Resend / Serverless endpoint seguro sin exponer API keys.
+  - Notificaciones de éxito y error en el formulario (feedback accesible).

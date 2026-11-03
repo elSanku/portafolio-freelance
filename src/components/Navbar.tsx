@@ -47,7 +47,7 @@ export const Navbar: React.FC = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg text-stone-400 hover:text-white hover:bg-stone-800 focus:outline-none focus:ring-2 focus:ring-amber-400"
               aria-expanded={isOpen}
-              aria-label="Abrir menú de navegación"
+              aria-label={isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>

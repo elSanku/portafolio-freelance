@@ -29,7 +29,7 @@ export const Services: React.FC = () => {
     <section id="servicios" className="py-24 bg-stone-100/60 border-y border-stone-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-xs uppercase font-bold tracking-widest text-amber-600 mb-2">Servicios & Especialidades</h2>
+          <h2 className="text-xs uppercase font-bold tracking-widest text-amber-700 mb-2">Servicios & Especialidades</h2>
           <p className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
             Soluciones integrales para hacer crecer tu negocio
           </p>
