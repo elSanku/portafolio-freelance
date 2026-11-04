@@ -1,38 +1,38 @@
 import React from 'react';
-import { Server, Database, Bot, CheckCircle2 } from 'lucide-react';
+import { Wrench, Database, Bot, CheckCircle2 } from 'lucide-react';
 
-//INI SPEC-003 - 04
-// Sección de Especialidades Técnicas alineadas al perfil real de Felipe Bustamante
+//INI SPEC-004 - 05
+// Sección de Especialidades Técnicas alineadas al perfil real y fortalezas de Felipe Bustamante
 export const Services: React.FC = () => {
   const specialties = [
     {
-      title: 'Desarrollo Backend & Servicios .NET',
-      description: 'Construcción de arquitecturas backend robustas en C# y .NET 10: Worker Services en segundo plano, integración de APIs REST empresariales y procesamiento tolerante a fallos.',
-      icon: Server,
+      title: 'Depuración & Modernización de Código Legado',
+      description: 'Diagnóstico quirúrgico y resolución de anomalías complejas en sistemas en producción. Especialista en modernizar sistemas legados (migración de VB6 a C# .NET) eliminando dependencias obsoletas sin interrumpir la operación.',
+      icon: Wrench,
       features: [
-        'Worker Services con control transaccional por lote',
-        'APIs REST seguras, modulares y de alto rendimiento',
-        'Migración de sistemas y componentes legados a .NET moderno',
+        'Migración de código legado VB6 a arquitecturas modernas en C# .NET',
+        'Resolución y depuración de incidencias críticas en sistemas en caliente',
+        'Refactorización limpia reduciendo deuda técnica y mejorando estabilidad',
       ],
     },
     {
-      title: 'Bases de Datos & SQL Server Transaccional',
-      description: 'Gestión y optimización avanzada de bases de datos relacionales empresariales respaldadas por la certificación oficial Azure Database Administrator Associate (DP-300).',
+      title: 'Consultas Complejas & SQL Server Transaccional',
+      description: 'Diseño, optimización y mantenimiento de bases de datos relacionales empresariales. Creación de procedimientos almacenados T-SQL robustos asistidos por IA y afinamiento de queries.',
       icon: Database,
       features: [
-        'Procedimientos almacenados complejos con commit/rollback atómico',
-        'Optimización de consultas T-SQL y afinamiento de índices',
-        'Migración y administración de instancias onpremise y Azure SQL',
+        'Procedimientos almacenados complejos con control transaccional atómico (commit/rollback)',
+        'Optimización y análisis de planes de ejecución en consultas T-SQL críticas',
+        'Conocimiento sólido de administración respaldado por certificación Azure DP-300',
       ],
     },
     {
-      title: 'Desarrollo Asistido por IA & Flujos SDD',
-      description: 'Integración de inteligencia artificial en el ciclo de vida del software mediante Spec-Driven Development con Google Antigravity y herramientas generativas.',
+      title: 'Worker Services & Desarrollo Asistido por IA (SDD)',
+      description: 'Construcción de servicios en segundo plano tolerantes a fallos (ej. sincronización de ventas de E-commerce al ERP), aprovechando el entendimiento del negocio y flujos estructurados con Google Antigravity.',
       icon: Bot,
       features: [
-        'Metodología Spec-Driven Development (SDD) con agentes autónomos',
-        'Aceleración de pruebas unitarias y refactorización guiada',
-        'Prompt Engineering y diseño de flujos de automatización técnica',
+        'Worker Services en .NET 10 para sincronización de APIs hacia bases de datos ERP',
+        'Aislamiento de fallos por lote: el proceso continúa aun si un registro falla',
+        'Metodología Spec-Driven Development (SDD) con agentes de IA para software riguroso',
       ],
     },
   ];
@@ -42,13 +42,13 @@ export const Services: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold uppercase tracking-wider mb-3">
-            <span>Especialidades</span>
+            <span>Especialidades & Fortalezas</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
-            Pilares Técnicos y Soluciones
+            Pilares Técnicos y Soluciones Reales
           </h2>
           <p className="mt-3 text-base text-stone-600">
-            Enfoque en fiabilidad, código limpio sin sobreingeniería y sistemas preparados para operar en entornos reales.
+            Enfoque en resiliencia, comprensión de las reglas del negocio y desarrollo eficiente asistido por IA.
           </p>
         </div>
 
@@ -84,4 +84,4 @@ export const Services: React.FC = () => {
     </section>
   );
 };
-//FIN SPEC-003 - 04
+//FIN SPEC-004 - 05
