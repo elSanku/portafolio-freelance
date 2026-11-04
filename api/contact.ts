@@ -1,10 +1,49 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend';
-import { contactSchema } from '../src/schemas/contactSchema';
+import { z } from 'zod';
 
 //INI SPEC-002 - 02
-// Serverless Function para Vercel: Valida con Zod y envía email con Resend
+// Esquema Zod autocontenido para ejecución limpia en Node.js Serverless
+const contactSchema = z.object({
+  nombre: z
+    .string()
+    .trim()
+    .min(2, { message: 'El nombre debe tener al menos 2 caracteres' })
+    .max(80, { message: 'El nombre no puede exceder 80 caracteres' }),
+
+  email: z
+    .string()
+    .trim()
+    .toLowerCase()
+    .email({ message: 'Ingresa un correo electrónico válido' })
+    .max(100, { message: 'El correo no puede exceder 100 caracteres' }),
+
+  telefono: z
+    .string()
+    .trim()
+    .max(20, { message: 'El teléfono no puede exceder 20 caracteres' })
+    .optional()
+    .or(z.literal('')),
+
+  mensaje: z
+    .string()
+    .trim()
+    .min(10, { message: 'Cuéntame un poco más (mínimo 10 caracteres)' })
+    .max(2000, { message: 'El mensaje no puede exceder 2000 caracteres' }),
+
+  website: z.string().optional(),
+});
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  // Manejo de CORS básico
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   // 1. Restringir solo a método POST
   if (req.method !== 'POST') {
     return res.status(405).json({
@@ -14,8 +53,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    // 2. Validar payload con Zod
-    const parseResult = contactSchema.safeParse(req.body);
+    // 2. Parsear body si viene como string
+    const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+
+    // 3. Validar payload con Zod
+    const parseResult = contactSchema.safeParse(body);
     if (!parseResult.success) {
       const fieldErrors = parseResult.error.flatten().fieldErrors;
       return res.status(400).json({
@@ -27,7 +69,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const { nombre, email, telefono, mensaje, website } = parseResult.data;
 
-    // 3. Protección antispam Honeypot: si el bot llenó el campo oculto, simular éxito y descartar
+    // 4. Protección antispam Honeypot: si el bot llenó el campo oculto, simular éxito y descartar
     if (website && website.trim().length > 0) {
       return res.status(200).json({
         success: true,
@@ -35,7 +77,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
     }
 
-    // 4. Verificar configuración de API Key
+    // 5. Verificar configuración de API Key
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
       console.error('[CRITICAL] Variable de entorno RESEND_API_KEY no configurada');
@@ -47,7 +89,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const resend = new Resend(apiKey);
 
-    // 5. Enviar correo hacia tu bandeja personal
+    // 6. Enviar correo hacia tu bandeja personal
     const emailResult = await resend.emails.send({
       from: 'Portafolio Web <onboarding@resend.dev>',
       to: ['thexsankux007@gmail.com'],
@@ -85,7 +127,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       console.error('[Resend Error]', emailResult.error);
       return res.status(500).json({
         success: false,
-        error: 'No fue posible despachar el mensaje mediante el proveedor.',
+        error: `Error de despacho: ${emailResult.error.message || 'Error en Resend'}`,
       });
     }
 
@@ -94,11 +136,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       message: 'Mensaje enviado correctamente',
       id: emailResult.data?.id,
     });
-  } catch (error) {
+  } catch (error: unknown) {
+    const errorMsg = error instanceof Error ? error.message : 'Error inesperado';
     console.error('[Server Error]', error);
     return res.status(500).json({
       success: false,
-      error: 'Ocurrió un error inesperado al procesar la solicitud.',
+      error: `Error interno del servidor: ${errorMsg}`,
     });
   }
 }

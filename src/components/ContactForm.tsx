@@ -58,18 +58,29 @@ export const ContactForm: React.FC = () => {
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
+      let result;
+      try {
+        result = await response.json();
+      } catch {
+        result = null;
+      }
 
-      if (response.ok && result.success) {
+      if (response.ok && result?.success) {
         setStatus('success');
         setFormData({ nombre: '', telefono: '', email: '', mensaje: '', website: '' });
       } else {
         setStatus('error');
-        setErrorMessage(result.error || 'Ocurrió un error al procesar el mensaje.');
+        setErrorMessage(
+          result?.error ||
+          (response.status === 500
+            ? 'Error en el servidor de correo. Verifica la API Key en Vercel.'
+            : `Error al procesar la solicitud (código ${response.status}).`)
+        );
       }
-    } catch {
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Error de conexión';
       setStatus('error');
-      setErrorMessage('No pudimos conectar con el servidor. Revisa tu conexión o escríbeme directamente.');
+      setErrorMessage(`No pudimos conectar con el servidor (${msg}). Revisa tu conexión o escríbeme directamente.`);
     }
   };
 
