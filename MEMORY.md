@@ -16,8 +16,9 @@
 - Accesos a LinkedIn y GitHub presentes en Navbar, About y Footer con seguridad (`rel="noopener noreferrer"`).
 - Arquitectura limpia y modular en `src/components/`, auditada bajo estándares WCAG AA, `ponytail` y `anti-ui-slop`.
 
-## Despliegue en Producción (En Vivo)
+## Despliegue en Producción (En Vivo y Verificado)
 - **URL Pública:** https://portafolio-freelance-theta.vercel.app/
 - **Plataforma:** Vercel (CI/CD conectado a `elSanku/portafolio-freelance.git`).
 - **Secretos:** `RESEND_API_KEY` configurada en el panel de Vercel.
-- **Backend:** Serverless Function `/api/contact` despachando a `thexsankux007@gmail.com`.
+- **Backend:** Serverless Function `/api/contact` autocontenida y probada con éxito en producción, despachando correos validados hacia `thexsankux007@gmail.com`.
+- **Estado:** 100% Funcional y en Producción.
