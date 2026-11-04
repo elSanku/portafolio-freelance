@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
             </a>
 
             <a
-              href="mailto:thexsankux007@gmail.com"
+              href="mailto:felipebustamantealcavil@gmail.com"
               className="p-2.5 rounded-xl bg-[#252526] hover:bg-[#2d2d2d] text-stone-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 border border-[#333333]"
               aria-label="Enviar correo electrónico a Felipe Bustamante"
             >

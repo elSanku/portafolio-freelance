@@ -126,5 +126,5 @@ El sitio se encuentra desplegado y en vivo en:
 **Felipe Bustamante Alcavil**  
 - **LinkedIn:** [felipe-bustamante-alcavil](https://linkedin.com/in/felipe-bustamante-alcavil)  
 - **GitHub:** [@elSanku](https://github.com/elSanku)  
-- **Email:** [thexsankux007@gmail.com](mailto:thexsankux007@gmail.com)  
+- **Email:** [felipebustamantealcavil@gmail.com](mailto:felipebustamantealcavil@gmail.com)  
 - **Certificación:** *Microsoft Certified: Azure Database Administrator Associate (DP-300)*

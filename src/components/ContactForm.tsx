@@ -140,8 +140,8 @@ export const ContactForm: React.FC = () => {
                     <p className="font-semibold">{errorMessage}</p>
                     <p className="text-xs text-rose-700 mt-1">
                       Si el problema persiste, puedes escribirme directamente a:{' '}
-                      <a href="mailto:thexsankux007@gmail.com" className="underline font-medium">
-                        thexsankux007@gmail.com
+                      <a href="mailto:felipebustamantealcavil@gmail.com" className="underline font-medium">
+                        felipebustamantealcavil@gmail.com
                       </a>
                     </p>
                   </div>

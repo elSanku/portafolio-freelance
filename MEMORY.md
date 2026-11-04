@@ -16,4 +16,4 @@
 - **URL Pública:** https://portafolio-freelance-theta.vercel.app/
 - **Plataforma:** Vercel (CI/CD conectado a `elSanku/portafolio-freelance.git`).
 - **Secretos:** `RESEND_API_KEY` configurada en Vercel.
-- **Backend:** Serverless Function `/api/contact` verificada y operativa despachando a `thexsankux007@gmail.com`.
+- **Backend:** Serverless Function `/api/contact` verificada y operativa despachando a `felipebustamantealcavil@gmail.com`.

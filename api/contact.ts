@@ -92,7 +92,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // 6. Enviar correo hacia tu bandeja personal
     const emailResult = await resend.emails.send({
       from: 'Portafolio Web <onboarding@resend.dev>',
-      to: ['thexsankux007@gmail.com'],
+      to: ['felipebustamantealcavil@gmail.com'],
       replyTo: email,
       subject: `Nuevo contacto web de ${nombre}`,
       text: `Has recibido un nuevo mensaje desde tu portafolio:\n\nNombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono || 'No especificado'}\n\nMensaje:\n${mensaje}`,
